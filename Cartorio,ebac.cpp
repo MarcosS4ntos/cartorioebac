@@ -32,7 +32,7 @@ int registro() //funçao responsavel por cadastra pd usuarios no sistema
     
 	
     file = fopen(arquivo, "a");//cria o arquivo e o "a" significa escrever
-	fprintf(file, nome);// salvo o valor do arquivo
+	fprintf(file, nome,",");// salvo o valor do arquivo
 	fclose(file);// fecha o arquivo
 	
 		
@@ -40,8 +40,8 @@ int registro() //funçao responsavel por cadastra pd usuarios no sistema
     scanf("%s",sobrenome);
     
 	
-    file = fopen(arquivo, "a");//cria o arquivo e o "a" significa escrever
-	fprintf(file,sobrenome);// salvo o valor do arquivo
+    file = fopen(arquivo,"a");//cria o arquivo e o "a" significa escrever
+	fprintf(file,sobrenome,",");// salvo o valor do arquivo
    	fclose(file);// fecha o arquivo
    	
 	
@@ -141,6 +141,7 @@ int main()
 	printf("\t1 -Registra nomes\n");
 	printf("\t2 -Consultar nomes\n");
     printf("\t3 -Deletar nomes\n");
+    printf("\t4- Sair do sistema\n\n");
     printf("opção:");//Fim do menu
 	 
     scanf("%d", &opcao);//armazenamdo a escolha do usuario
@@ -159,7 +160,13 @@ int main()
 	    
 	case 3:
    	deletar();
-	break;	
+	break;
+	
+	case 4:
+	printf("Obrigado por utilizar o sistema!\n");
+	return 0;
+	break;
+	
 	 	
 	default:
 	printf("Essa opcao não està disponivel\n");
